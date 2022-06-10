@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Interactive rating component</title>
 
@@ -31,15 +32,15 @@
       </div>
 
       <div class="rating-numbers">
-        <button> 1 </button> 
-        <button> 2 </button> 
-        <button> 3 </button> 
-        <button> 4 </button> 
-        <button> 5 </button> 
+        <button class="select-button one"> 1 </button> 
+        <button class="select-button two"> 2 </button> 
+        <button class="select-button three"> 3 </button> 
+        <button class="select-button four"> 4 </button> 
+        <button class="select-button five"> 5 </button> 
       </div>
 
       <div class="submit-button-wrapper">
-        <button class="submit-button">Submit </button>  
+        <button class="submit-button">SUBMIT</button>  
       </div>
       <!-- Rating state end -->
 
@@ -54,7 +55,7 @@
     <div class="thank-you-message">
       <figure> <img src="./images/illustration-thank-you.svg" alt=""> </figure>
       <div class="you-selected">
-        You selected <!-- Add rating here --> out of 5
+        You selected <div class="selected-button" ></div> out of 5
       </div>
       <div class="thank-you">Thank you! </div>
       <div class="appreciation-text">
@@ -67,5 +68,6 @@
 
     <!-- Thank you state end -->
   </div>
+  <script src="./script.js"></script>
 </body>
 </html>
