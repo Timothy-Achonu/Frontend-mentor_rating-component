@@ -17,7 +17,10 @@ const submitButton = document.querySelector('.submit-button');
 submitButton.addEventListener('click', showMessage); 
 
 function showMessage() {
-    if(checkSelectedRating === true) {
+    if(checkSelectedRating == false) {
+        alert('Select a rating first')
+    }
+    else if(checkSelectedRating === true) {
         document.querySelector('.main-container').
         setAttribute('class', 'main-container remove-rating-page');
 
