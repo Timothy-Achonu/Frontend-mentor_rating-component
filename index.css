@@ -94,12 +94,23 @@ body {
     border: none;
     color: var(--light-grey);
     cursor: pointer;
+    transition: background-color 400ms;
 }
 
 .rating-numbers > button:hover {
    background-color: var(--orange-color);
    color: white;
 }
+
+.rating-numbers > button.clicked-button {
+    background-color: var(--light-grey);
+    color: white;
+}
+
+.rating-numbers > button.clicked-button:hover {
+    background-color: var(--light-grey);
+}
+
 
 .submit-button-wrapper {
     width: 100%;
