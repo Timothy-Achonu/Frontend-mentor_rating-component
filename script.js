@@ -17,11 +17,15 @@ function styleButtons(e) {
         if(count >= 2) {
             if(e.target !== lastClickedButton) {
                 // console.log(lastClickedButton);
-                lastClickedButton.removeAttribute('class');
-                lastClickedButton.setAttribute('class', 'select-button')
+                lastClickedButton.classList.remove('clicked-button');
+                // lastClickedButton.removeAttribute('class');
+                // lastClickedButton.setAttribute('class', 'select-button')
                 // console.log(lastClickedButton.classList)
                 /*
                 How does removeAttribute method work?
+                I think the removeAttribute method removes the
+                attribute you specify when you call it and not an
+                attribute name, it removes the whole attribute.
                 */
             } 
         }
@@ -29,26 +33,21 @@ function styleButtons(e) {
         // console.log(lastClickedButton)
         selectedRating =  e.target.innerText ;
         checkSelectedRating = true;
-        /*
-          I don't get this. This works but, if I keep clicking and
-          unclicking the ratings tryihg to test the code, suddenly 
-          the function stops running when I click the buttons, 
-          only one of them continues to run the function when I 
-          click on it- I know this because it still toggles the
-          'clicked-button' class and things are still printed on
-          the console when that button is clicked.
-        */
     }
 }
 
 const submitButton = document.querySelector('.submit-button');
 submitButton.addEventListener('click', showMessage); 
 
-function showMessage() {
-    if(checkSelectedRating == false) {
-        alert('Select a rating first')
+function showMessage(e) {
+    if(checkSelectedRating === false) {
+        alert('Please Select a Rating');
     }
-    else if(checkSelectedRating === true) {
+    else if(lastClickedButton.classList.contains('clicked-button') === false) {
+        alert('Please Select a rating')
+    }
+    else if(lastClickedButton.classList.contains('clicked-button') === true) {
+        console.log(lastClickedButton);
         document.querySelector('.main-container').
         setAttribute('class', 'main-container remove-rating-page');
 
